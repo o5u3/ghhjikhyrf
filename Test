@@ -1,3 +1,7 @@
+-- Change#2
+
+-- Change#2
+
 local UILibrary = {}
 --// Modules
 
@@ -3221,7 +3225,7 @@ for i, v in pairs(UILibNames) do
     UILibrary[v].__index = UILibrary[v]
 end
 
-function UILibrary.new(gameName, userId, rank)
+function UILibrary.new(gameName)
     local GUI = Instance.new("ScreenGui")
     GUI.Name = HttpService:GenerateGUID(false)
     GUI.Parent =
@@ -3252,7 +3256,7 @@ function UILibrary.new(gameName, userId, rank)
 
     --// Customize the GUI
     local userinfo = window.MainUI.Sidebar.ContentHolder.UserInfo.Content
-    userinfo.Rank.Text = rank
+    userinfo.Rank.Text = "Admin"
     userinfo.Title.Text = "REDACTED"
     return setmetatable(
         {
@@ -3260,7 +3264,7 @@ function UILibrary.new(gameName, userId, rank)
             windowInfo = {
                 gameName = gameName,
                 userId = "REDACTED",
-                rank = rank
+                rank = "Admin"
             },
             currentSelection = nil,
             currentCategorySelection = nil,
